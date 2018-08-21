@@ -1,0 +1,75 @@
+<html lang="pt-BR">
+	<head>
+		<script>
+			var palavras = ["TESTE", "FULANO", "CICLANO", "FACULDADE", "PROVA"];
+			var palavraEscolhida = palavras[Math.floor(Math.random() * 5)];
+			var jogo = "_".repeat(palavraEscolhida.length);
+			var chances = 5;
+		
+			document.addEventListener("DOMContentLoaded", function(event) {
+				atualizarJogo();
+				atualizarChances();
+			});
+			
+			function tentar(letra) {
+				if (chances <= 0) {
+					atualizarFeedback("<u>Voce perdeu, aperte F5 para jogar novamente!</u>");
+					return;
+				}
+				
+				var tentativa = letra.toUpperCase();
+				
+				if (palavraEscolhida.includes(tentativa)) {
+					atualizarFeedback("<font color='green'>Acertou!</font-color>");
+					
+					alert(palavraEscolhida.indexOf(tentativa));
+					
+					atualizarJogo();
+				} else {
+					atualizarFeedback("<font color='red'>Errou!</font-color>");
+					chances--;
+					atualizarChances();
+				}
+			}
+			
+			function atualizarJogo() {
+				document.getElementById("palavra").innerHTML = palavraEscolhida + "<br>" + jogo;
+			}
+			
+			function atualizarChances() {
+				document.getElementById("chances").innerHTML = "<b>Chances:</b> " + chances;
+			}
+			
+			function atualizarFeedback(texto) {
+				document.getElementById("feedback").innerHTML = "<b>" + texto + "</b>";
+			}
+		</script>
+		
+		<style>
+			body { 
+				text-align: center;
+			}
+		
+			#palavra {
+				font-weight: bold;
+				font-size: 80px;
+				letter-spacing: 20px;
+			}
+			
+			#chances {
+				font-size: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="palavra"></div>
+		<br /> <hr />
+		<div id="chances"></div>
+		<hr /> <br />
+		
+		<input type="text" id="tentativa" maxlength="1" />
+		<input type="button" onclick="tentar(document.getElementById('tentativa').value)" value="Tentar" />
+		<br /> <br />
+		<div id="feedback"></div>
+	</body>
+</html>
