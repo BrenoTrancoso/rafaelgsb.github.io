@@ -1,0 +1,18 @@
+body { 
+	text-align: center;
+}
+
+#palavra {
+	font-weight: bold;
+	font-size: 80px;
+	letter-spacing: 20px;
+}
+
+#chances {
+	font-size: 25px;
+}
+
+#feedback {
+	font-weight: bold;
+	font-size: 20px;
+}
