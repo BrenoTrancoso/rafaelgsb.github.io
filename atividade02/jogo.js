@@ -1,16 +1,17 @@
-var palavras = ["Ruido", "Bilhete", "Mentira", "Trombeta", "Carro", "Cidade", "Palavra", "Carpa", "Taxidermia", "Popular",
-                "Turismo", "Ruim", "Página", "Amor", "Acesso", "Etiqueta", "Sugestão", "Hospital", "Almoço", "Brinde",
-                "Bermuda", "Madeira", "Razão", "Divisória", "Tijolo", "Salsicha", "Formigueiro", "Gotejamento", "Quadrúpede",
-                "Chão", "Famoso", "Acampamento", "Longe", "Recital", "Barcelona", "Superstição", "Prego", "Enfermeira", "Bateria", "Carta",
-                "Medalha", "Cereais", "Beijo", "Manutenção", "Mulher", "Homicídio", "Cardeal", "Postiço", "Frágil", "Céu", "Antena",
-                "Virgem", "Co-piloto", "Violação", "Bicicleta", "TV", "Revendedor", "Duro", "Deslumbramento", "Saraivada", "Captura",
-                "Resgate", "Lubrificante", "Enigma", "Lago", "Marrom", "Monumento", "Queijo", "Galeria", "Descobridor", "Amendoim",
-                "Zangado", "Igual", "Aliança", "Inesperado", "Plágio", "Pomba", "Ocupação", "Granada", "Universidade", "Açougueiro",
-                "Bigorna", "Esquilo", "Presente", "Doce", "Cola", "Livraria", "Lavatório", "Molde", "Fábrica", "Boato", "Ciclone",
-                "Computador", "Ato", "Grelha", "Membrana", "Verruga", "Camponês", "Pedal", "Facada", "Jogo", "Cintura", "Eixo"];
+var palavras = ["RUIDO", "BILHETE", "MENTIRA", "TROMBETA", "CARRO", "CIDADE", "PALAVRA", "CARPA", "TAXIDERMIA", "POPULAR",
+                "TURISMO", "RUIM", "PÁGINA", "AMOR", "ACESSO", "ETIQUETA", "SUGESTÃO", "HOSPITAL", "ALMOÇO", "BRINDE",
+                "BERMUDA", "MADEIRA", "RAZÃO", "DIVISÓRIA", "TIJOLO", "SALSICHA", "FORMIGUEIRO", "GOTEJAMENTO", "QUADRÚPEDE",
+                "CHÃO", "FAMOSO", "ACAMPAMENTO", "LONGE", "RECITAL", "BARCELONA", "SUPERSTIÇÃO", "PREGO", "ENFERMEIRA", "BATERIA", "CARTA",
+                "MEDALHA", "CEREAIS", "BEIJO", "MANUTENÇÃO", "MULHER", "HOMICÍDIO", "CARDEAL", "POSTIÇO", "FRÁGIL", "CÉU", "ANTENA",
+                "VIRGEM", "CO-PILOTO", "VIOLAÇÃO", "BICICLETA", "TV", "REVENDEDOR", "DURO", "DESLUMBRAMENTO", "SARAIVADA", "CAPTURA",
+                "RESGATE", "LUBRIFICANTE", "ENIGMA", "LAGO", "MARROM", "MONUMENTO", "QUEIJO", "GALERIA", "DESCOBRIDOR", "AMENDOIM",
+                "ZANGADO", "IGUAL", "ALIANÇA", "INESPERADO", "PLÁGIO", "POMBA", "OCUPAÇÃO", "GRANADA", "UNIVERSIDADE", "AÇOUGUEIRO",
+                "BIGORNA", "ESQUILO", "PRESENTE", "DOCE", "COLA", "LIVRARIA", "LAVATÓRIO", "MOLDE", "FÁBRICA", "BOATO", "CICLONE",
+                "COMPUTADOR", "ATO", "GRELHA", "MEMBRANA", "VERRUGA", "CAMPONÊS", "PEDAL", "FACADA", "JOGO", "CINTURA", "EIXO"];
+
 var palavraEscolhida = palavras[Math.floor(Math.random() * palavras.length)];
 var jogo = "_".repeat(palavraEscolhida.length);
-var chances = 5;
+var chances = 7;
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	resetarComponenteTentativa();
