@@ -12,6 +12,7 @@ var palavras = ["RUIDO", "BILHETE", "MENTIRA", "TROMBETA", "CARRO", "CIDADE", "P
 var palavraEscolhida = palavras[Math.floor(Math.random() * palavras.length)];
 var jogo = "_".repeat(palavraEscolhida.length);
 var chances = 7;
+var letrasTentadas = [];
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	resetarComponenteTentativa();
@@ -27,7 +28,7 @@ function tentar(letra) {
 	}
 
 	if (chances <= 0) {
-		atualizarFeedback("<u>Você perdeu, aperte F5 para jogar novamente!</u>");
+		feedback("<u>Você perdeu, aperte F5 para jogar novamente!</u>");
 		return;
 	}
 
@@ -38,12 +39,20 @@ function tentar(letra) {
 
 	var tentativa = letra.toUpperCase();
 	
+	if (letrasTentadas.includes(tentativa)) {
+		feedback("Você já tentou essa letra!");
+		return;
+	}
+	
+	letrasTentadas.push(tentativa);
+	atualizarLetrasTentadas();
+	
 	if (palavraEscolhida.includes(tentativa)) {
-		atualizarFeedback("<font color='green'>Acertou!</font>");
+		feedback("<font color='green'>Acertou!</font>");
 		jogo = jogo.replaceAt(tentativa);
 		atualizarJogo();
 	} else {
-		atualizarFeedback("<font color='red'>Errou!</font>");
+		feedback("<font color='red'>Errou!</font>");
 		chances--;
 		atualizarChances();
 	}
@@ -62,7 +71,11 @@ function atualizarChances() {
 	document.getElementById("chances").innerHTML = "<b>Chances:</b> " + chances;
 }
 
-function atualizarFeedback(texto) {
+function atualizarLetrasTentadas() {
+	document.getElementById("letrasTentadas").innerHTML = "<b>Letras tentadas:<br /></b> " + letrasTentadas;
+}
+
+function feedback(texto) {
 	document.getElementById("feedback").innerHTML = texto;
 }
 
