@@ -62,7 +62,7 @@ function atualizarJogo() {
 	document.getElementById("palavra").innerHTML = jogo;
 
 	if (palavraEscolhida == jogo) {
-		atualizarFeedback("<h2><font color='green'>Parabéns! Você ganhou!</font></h2>");
+		feedback("<h2><font color='green'>Parabéns! Você ganhou!</font></h2>");
 		chances = 0;
 	}
 }
