@@ -28,7 +28,6 @@ function tentar(letra) {
 	}
 
 	if (chances <= 0) {
-		feedback("<u>Você perdeu, aperte F5 para jogar novamente!</u>");
 		return;
 	}
 
@@ -69,6 +68,10 @@ function atualizarJogo() {
 
 function atualizarChances() {
 	document.getElementById("chances").innerHTML = "<b>Chances:</b> " + chances;
+	
+	if (chances <= 0) {
+		feedback("<u>Você perdeu, aperte F5 para jogar novamente!</u>");
+	}
 }
 
 function atualizarLetrasTentadas() {
