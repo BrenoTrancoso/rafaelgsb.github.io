@@ -11,7 +11,7 @@ var palavras = ["RUIDO", "BILHETE", "MENTIRA", "TROMBETA", "CARRO", "CIDADE", "P
 
 var palavraEscolhida = palavras[Math.floor(Math.random() * palavras.length)];
 var jogo = "_".repeat(palavraEscolhida.length);
-var chances = 7;
+var chances = 10;
 var letrasTentadas = [];
 
 document.addEventListener("DOMContentLoaded", function(event) {
