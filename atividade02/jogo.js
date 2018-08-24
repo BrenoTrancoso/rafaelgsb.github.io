@@ -116,10 +116,6 @@ String.prototype.replaceAt = function(replacement) {
 
 // Retira acento e deixa em minúsculo
 function padronizaStr(str) {
-  // Deixa em minúsculo
-  str = str.toLowerCase();
-
-  // Retira os acentos
   for(var re in ACENTO_REGEX) {
     str = str.replace(ACENTO_REGEX[re], re)
   }
