@@ -10,12 +10,12 @@ var palavras = ["RUIDO", "BILHETE", "MENTIRA", "TROMBETA", "CARRO", "CIDADE", "P
                 "COMPUTADOR", "ATO", "GRELHA", "MEMBRANA", "VERRUGA", "CAMPONÊS", "PEDAL", "FACADA", "JOGO", "CINTURA", "EIXO"];
 
 var ACENTO_REGEX = {
-  'a': /[\xE0-\xE6]/g,
-  'e': /[\xE8-\xEB]/g,
-  'i': /[\xEC-\xEF]/g,
-  'o': /[\xF2-\xF6]/g,
-  'u': /[\xF9-\xFC]/g,
-  'c': /\xE7/g
+  'A': /[\xE0-\xE6]/g,
+  'E': /[\xE8-\xEB]/g,
+  'I': /[\xEC-\xEF]/g,
+  'O': /[\xF2-\xF6]/g,
+  'U': /[\xF9-\xFC]/g,
+  'C': /\xE7/g
 }
 
 var palavraEscolhida = palavras[Math.floor(Math.random() * palavras.length)];
