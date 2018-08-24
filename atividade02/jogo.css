@@ -5,7 +5,7 @@ body {
 
 #palavra {
 	font-weight: bold;
-	font-size: 80px;
+	font-size: 8vw;
 	letter-spacing: 20px;
 	word-wrap: break-word;
 }
