@@ -100,18 +100,19 @@ function resetarComponenteTentativa() {
 String.prototype.replaceAt = function(replacement) {
 	var novoTexto = this;
 	var indexes = [];
+	var palavraTratada = padronizaStr(palavraEscolhida);
 	
-    for(var i = 0; i < palavraEscolhida.length; i++) {
-        if (padronizaStr(palavraEscolhida)[i] === replacement) {
-            indexes.push(i);
-        }
-    }
+	    for(var i = 0; i < palavraTratada.length; i++) {
+		if (palavraTratada[i] === replacement) {
+		    indexes.push(i);
+		}
+	    }
 
-    indexes.forEach(function(index) {
-    	novoTexto = novoTexto.substr(0, index) + replacement+ novoTexto.substr(index + replacement.length);
-    });
+	    indexes.forEach(function(index) {
+		novoTexto = novoTexto.substr(0, index) + replacement+ novoTexto.substr(index + replacement.length);
+	    });
 
-    return novoTexto;
+	    return novoTexto;
 }
 
 // Retira acento e deixa em minúsculo
