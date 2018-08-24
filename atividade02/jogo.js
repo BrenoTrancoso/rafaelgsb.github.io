@@ -9,6 +9,15 @@ var palavras = ["RUIDO", "BILHETE", "MENTIRA", "TROMBETA", "CARRO", "CIDADE", "P
                 "BIGORNA", "ESQUILO", "PRESENTE", "DOCE", "COLA", "LIVRARIA", "LAVATÓRIO", "MOLDE", "FÁBRICA", "BOATO", "CICLONE",
                 "COMPUTADOR", "ATO", "GRELHA", "MEMBRANA", "VERRUGA", "CAMPONÊS", "PEDAL", "FACADA", "JOGO", "CINTURA", "EIXO"];
 
+var ACENTO_REGEX = {
+  'a': /[\xE0-\xE6]/g,
+  'e': /[\xE8-\xEB]/g,
+  'i': /[\xEC-\xEF]/g,
+  'o': /[\xF2-\xF6]/g,
+  'u': /[\xF9-\xFC]/g,
+  'c': /\xE7/g
+}
+
 var palavraEscolhida = palavras[Math.floor(Math.random() * palavras.length)];
 var jogo = "_".repeat(palavraEscolhida.length);
 var chances = 10;
@@ -46,7 +55,7 @@ function tentar(letra) {
 	letrasTentadas.push(tentativa);
 	atualizarLetrasTentadas();
 	
-	if (palavraEscolhida.includes(tentativa)) {
+	if (padronizaStr(palavraEscolhida).includes(tentativa)) {
 		feedback("<font color='green'>Acertou!</font>");
 		jogo = jogo.replaceAt(tentativa);
 		atualizarJogo();
@@ -60,7 +69,7 @@ function tentar(letra) {
 function atualizarJogo() {
 	document.getElementById("palavra").innerHTML = jogo;
 
-	if (palavraEscolhida == jogo) {
+	if (padronizaStr(palavraEscolhida) == jogo) {
 		feedback("<h2><font color='green'>Parabéns! Você ganhou!</font></h2>");
 		chances = 0;
 	}
@@ -103,4 +112,17 @@ String.prototype.replaceAt = function(replacement) {
     });
 
     return novoTexto;
+}
+
+// Retira acento e deixa em minúsculo
+function padronizaStr(str) {
+  // Deixa em minúsculo
+  str = str.toLowerCase();
+
+  // Retira os acentos
+  for(var re in ACENTO_REGEX) {
+    str = str.replace(ACENTO_REGEX[re], re)
+  }
+
+  return str;
 }
