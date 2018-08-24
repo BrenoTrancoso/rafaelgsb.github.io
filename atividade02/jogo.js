@@ -102,7 +102,7 @@ String.prototype.replaceAt = function(replacement) {
 	var indexes = [];
 	
     for(var i = 0; i < palavraEscolhida.length; i++) {
-        if (palavraEscolhida[i] === replacement) {
+        if (padronizaStr(palavraEscolhida)[i] === replacement) {
             indexes.push(i);
         }
     }
