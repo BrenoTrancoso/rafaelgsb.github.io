@@ -79,7 +79,7 @@ function atualizarChances() {
 	document.getElementById("chances").innerHTML = "<b>Chances:</b> " + chances;
 	
 	if (chances <= 0) {
-		feedback("<u>Você perdeu, aperte F5 para jogar novamente!</u>");
+		feedback("<u>Você perdeu, recarregue a página para jogar novamente!</u>");
 	}
 }
 
