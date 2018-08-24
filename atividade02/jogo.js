@@ -99,18 +99,19 @@ function resetarComponenteTentativa() {
 
 String.prototype.replaceAt = function(replacement) {
 	var novoTexto = this;
-	var indexes = [];
+// 	var indexes = [];
 	var palavraTratada = padronizaStr(palavraEscolhida);
 	
 	    for(var i = 0; i < palavraTratada.length; i++) {
 		if (palavraTratada[i] === replacement) {
-		    indexes.push(i);
+// 		    indexes.push(i);
+		    novoTexto = novoTexto.substr(0, i) + palavraTratada[i] + novoTexto.substr(i + 1);
 		}
 	    }
 
-	    indexes.forEach(function(index) {
-		novoTexto = novoTexto.substr(0, index) + replacement+ novoTexto.substr(index + replacement.length);
-	    });
+// 	    indexes.forEach(function(index) {
+// 		novoTexto = novoTexto.substr(0, index) + palavraTratada[i]+ novoTexto.substr(index + 1);
+// 	    });
 
 	    return novoTexto;
 }
