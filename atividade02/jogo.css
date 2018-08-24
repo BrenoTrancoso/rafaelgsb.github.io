@@ -6,6 +6,7 @@ body {
 	font-weight: bold;
 	font-size: 80px;
 	letter-spacing: 20px;
+	word-wrap: break-word;
 }
 
 #chances {
