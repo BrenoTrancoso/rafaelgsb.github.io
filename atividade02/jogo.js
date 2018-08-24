@@ -99,29 +99,22 @@ function resetarComponenteTentativa() {
 
 String.prototype.replaceAt = function(replacement) {
 	var novoTexto = this;
-// 	var indexes = [];
 	var palavraTratada = padronizaStr(palavraEscolhida);
 	
-	    for(var i = 0; i < palavraTratada.length; i++) {
+	for(var i = 0; i < palavraTratada.length; i++) {
 		if (palavraTratada[i] === replacement) {
-// 		    indexes.push(i);
-		    novoTexto = novoTexto.substr(0, i) + palavraTratada[i] + novoTexto.substr(i + 1);
+			novoTexto = novoTexto.substr(0, i) + palavraEscolhida[i] + novoTexto.substr(i + 1);
 		}
-	    }
+	}
 
-// 	    indexes.forEach(function(index) {
-// 		novoTexto = novoTexto.substr(0, index) + palavraTratada[i]+ novoTexto.substr(index + 1);
-// 	    });
-
-	    return novoTexto;
+	return novoTexto;
 }
 
-// Retira acento e deixa em minúsculo
 function padronizaStr(str) {
   str = str.toLowerCase();
 	
   for(var re in ACENTO_REGEX) {
-    str = str.replace(ACENTO_REGEX[re], re)
+	str = str.replace(ACENTO_REGEX[re], re)
   }
 
   return str.toUpperCase();
