@@ -99,10 +99,10 @@ function resetarComponenteTentativa() {
 
 String.prototype.replaceAt = function(replacement) {
 	var novoTexto = this;
-	var palavraTratada = padronizaStr(palavraEscolhida);
+	var palavraPadronizada = padronizaStr(palavraEscolhida);
 	
-	for(var i = 0; i < palavraTratada.length; i++) {
-		if (palavraTratada[i] === replacement) {
+	for(var i = 0; i < palavraPadronizada.length; i++) {
+		if (palavraPadronizada[i] === replacement) {
 			novoTexto = novoTexto.substr(0, i) + palavraEscolhida[i] + novoTexto.substr(i + 1);
 		}
 	}
