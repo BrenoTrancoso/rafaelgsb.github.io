@@ -1,0 +1,28 @@
+body {
+    background-color: #525683;
+    text-align: center;
+    color: white;
+}
+.placar > *{
+    float: left;
+}
+.placar {
+    display: inline-block;
+    font-size: 2em;
+}
+.jogador {
+    margin-right: 10vw;
+}
+.computador {
+    margin-left: 10vw;
+}
+#pedra, #papel, #tesoura {
+    max-width: 10%;
+    height: auto;
+}
+#personagens {
+    font-size: 2em;
+}
+.x {
+    margin-top: 6vw;
+}
