@@ -14,3 +14,12 @@ h1 {
   font-family: "Merriweather", serif;
   font-size: 32px;
 }
+
+b {
+  float: left;
+}
+
+#porcentagem {
+  float: left;
+  margin-left: 10px;
+}
