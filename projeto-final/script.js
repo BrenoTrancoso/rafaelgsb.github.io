@@ -915,7 +915,9 @@ var PACMAN = (function () {
     function getScoreboard() {
         scoreboard = document.getElementById("scoreboard");
         newScoreboard = "";
-    
+    	score.sort();
+	score.reverse();
+	    
         for (i = 0; i < scores.length; i++) {
             newScoreboard += (i + 1) + "º - " + scores[i] + "<br/>";
         }
