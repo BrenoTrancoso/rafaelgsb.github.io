@@ -917,7 +917,7 @@ var PACMAN = (function () {
         newScoreboard = "";
     	scores.sort((a, b) => parseInt(a) < parseInt(b))
 	    
-        for (i = 0; i < scores.length; i++) {
+        for (i = 0; i < scores.length && i < 5; i++) {
             newScoreboard += (i + 1) + "º - " + scores[i] + "<br/>";
         }
 
