@@ -1,22 +1,21 @@
-body { 
-    width: 342px; 
-    margin: 0px auto; 
-}
-
-#game {
-    height: 450px;
-    width: 342px;
-    margin: 20px auto;
+body {
+  background-color: black;
 }
 
 #top {
-    height: 150px;
-    widows: 342px;
-    background-color: black;
-    text-align: center;
-    color: white;
+  height: 150px;
+  widows: 342px;
+  background-color: black;
+  color: white;
+  padding-top: 490px;
+  text-align: center;
 }
 
 #top > h3 {
-    padding-top: 5px;
+  padding-top: 5px;
+}
+
+#top > hr {
+  width: 200px;
+  margin-top: -10px;
 }
